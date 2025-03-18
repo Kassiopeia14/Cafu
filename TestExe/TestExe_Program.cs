@@ -1,6 +1,6 @@
 ﻿Console.WriteLine("Hello from TestExe!");
 
-string uri = "http://localhost:5120";
+string uri = "http://localhost:5005";
 
 HttpClient httpClient = new HttpClient();
 HttpResponseMessage result = await httpClient.GetAsync(uri + "/weatherforecast");

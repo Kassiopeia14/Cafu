@@ -1,8 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+builder.WebHost.ConfigureKestrel((context, serverOptions) =>
+{
+    serverOptions.ListenAnyIP(5005);
+});;
 
 var app = builder.Build();
 
