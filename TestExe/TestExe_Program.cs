@@ -1,13 +1,7 @@
-﻿Console.WriteLine("Hello from TestExe!");
+﻿using modTestClient;
 
-string uri = "http://localhost:5005";
+TestClient testClient = new TestClient();
 
-HttpClient httpClient = new HttpClient();
-HttpResponseMessage result = await httpClient.GetAsync(uri + "/weatherforecast");
+string? result = await testClient.GetTest();
 
-if (result.IsSuccessStatusCode)
-{
-    var stringData = await result.Content.ReadAsStringAsync();
-
-    Console.WriteLine(stringData);
-}
+Console.WriteLine($"TestClient result: {result}");
