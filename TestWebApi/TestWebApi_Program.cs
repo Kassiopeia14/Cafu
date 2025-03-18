@@ -1,3 +1,6 @@
+using System.Text.Json;
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.ConfigureKestrel((context, serverOptions) =>
@@ -18,6 +21,13 @@ app.UseHttpsRedirection();
 app.MapGet("/test", () =>
 {
     return "TEST";
+});
+
+app.MapPost("/message", ([FromBody] string message) =>
+{
+    //string? message = JsonSerializer.Deserialize<string>(json);
+
+    Console.WriteLine($"Received message: {message}");
 });
 
 app.Run();
