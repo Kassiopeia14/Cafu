@@ -1,5 +1,6 @@
 ﻿using System.Text;
 using System.Text.Json;
+using modTestWebApiJSONModels;
 
 namespace modTestHTTPClient;
 
@@ -7,10 +8,13 @@ public class TestHTTPClient
 {
     string serviceUri = "http://localhost:5005";
 
-    public async Task PostMessage(string message)
+    public async Task PostMessage(string sender, string receiver, MessageItem message)
     {
         HttpClient httpClient = new HttpClient();
         
+        httpClient.DefaultRequestHeaders.Add("Sender", $"{sender}");
+        httpClient.DefaultRequestHeaders.Add("Receiver", $"{receiver}");
+
         string jsonString = JsonSerializer.Serialize(message);
         
         HttpContent httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");

@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\modTestHTTPClient\modTestHTTPClient.csproj" />
+    <ProjectReference Include="..\modTestWebApiJSONModels\modTestWebApiJSONModels.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
