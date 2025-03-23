@@ -1,10 +1,9 @@
 ﻿using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
-namespace modTestClient;
+namespace modTestHTTPClient;
 
-public class TestClient
+public class TestHTTPClient
 {
     string serviceUri = "http://localhost:5005";
 
@@ -16,13 +15,13 @@ public class TestClient
         
         HttpContent httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 
-        HttpResponseMessage result = await httpClient.PostAsync(serviceUri + "/message", httpContent);
+        HttpResponseMessage result = await httpClient.PostAsync(serviceUri + "/api/Message", httpContent);
     }
 
     public async Task<string?> GetTest()
     {
         HttpClient httpClient = new HttpClient();
-        HttpResponseMessage result = await httpClient.GetAsync(serviceUri + "/test");
+        HttpResponseMessage result = await httpClient.GetAsync(serviceUri + "/api/New");
 
         try
         {
