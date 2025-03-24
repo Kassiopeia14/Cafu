@@ -1,5 +1,6 @@
-using System.Text.Json;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using modTestChatDataStorage;
+using modTestChatRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,10 +9,20 @@ builder.WebHost.ConfigureKestrel((context, serverOptions) =>
     serverOptions.ListenAnyIP(5005);
 });;
 
+builder.Services.AddDbContext<ChatDataContext>(options =>
+    options.UseNpgsql("Host=localhost;Database=test_cafu;Username=postgres;Password=postgres"));
+
+builder.Services.AddScoped<ITestChatRepository, TestChatRepository>();
+
 builder.Services.AddControllers();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ChatDataContext>();
+    context.Database.Migrate(); // ← this runs all pending migrations!
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

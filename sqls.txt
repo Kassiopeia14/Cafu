@@ -1,0 +1,9 @@
+create  database test_cafu;
+
+CREATE TABLE messages (
+    id SERIAL PRIMARY KEY,
+    sender TEXT NOT NULL,
+    receiver TEXT NOT NULL,
+    text TEXT,
+    init_time TIMESTAMP
+);
