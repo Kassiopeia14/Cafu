@@ -4,6 +4,8 @@ public class ChatHub : Hub
 {
     public async Task SendMessage(string user, string message)
     {
-        await Clients.All.SendAsync("ReceiveMessage", user, message);
+        await Clients
+            .AllExcept(Context.ConnectionId)
+            .SendAsync("ReceiveMessage", user, message);
     }
 }
