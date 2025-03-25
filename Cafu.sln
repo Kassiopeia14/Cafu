@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modTestChatRepository", "mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modTestChatDataStorage", "modTestChatDataStorage\modTestChatDataStorage.csproj", "{293A2A56-259B-446B-9152-C7BCFDA1C3E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRClient", "TestSignalRClient\TestSignalRClient.csproj", "{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{293A2A56-259B-446B-9152-C7BCFDA1C3E7}.Release|x64.Build.0 = Release|Any CPU
 		{293A2A56-259B-446B-9152-C7BCFDA1C3E7}.Release|x86.ActiveCfg = Release|Any CPU
 		{293A2A56-259B-446B-9152-C7BCFDA1C3E7}.Release|x86.Build.0 = Release|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|x64.Build.0 = Debug|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|x86.Build.0 = Debug|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x64.ActiveCfg = Release|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x64.Build.0 = Release|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x86.ActiveCfg = Release|Any CPU
+		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

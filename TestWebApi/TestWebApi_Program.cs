@@ -12,6 +12,8 @@ builder.WebHost.ConfigureKestrel((context, serverOptions) =>
 builder.Services.AddDbContext<ChatDataContext>(options =>
     options.UseNpgsql("Host=localhost;Database=test_cafu;Username=postgres;Password=postgres"));
 
+builder.Services.AddSignalR();
+
 builder.Services.AddScoped<ITestChatRepository, TestChatRepository>();
 
 builder.Services.AddControllers();
@@ -23,11 +25,13 @@ using (var scope = app.Services.CreateScope())
     var context = scope.ServiceProvider.GetRequiredService<ChatDataContext>();
     context.Database.Migrate(); // ← this runs all pending migrations!
 }
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
+app.MapHub<ChatHub>("/chatHub");
 
 app.MapControllers();
 

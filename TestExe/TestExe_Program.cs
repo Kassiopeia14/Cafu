@@ -11,9 +11,11 @@ string
     sender = "SENDER",
     receiver = "RECEIVER";
 
+Random random = new Random();
+
 MessageItem message = new MessageItem
 {
-    Text = "BUBA"
+    Text = "BUBA" + random.Next(0, 100).ToString()
 };
 
 await testClient.PostMessage(sender, receiver, message);
