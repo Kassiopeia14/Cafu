@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modTestChatDataStorage", "m
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRClient", "TestSignalRClient\TestSignalRClient.csproj", "{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRHistoryClient", "TestSignalRHistoryClient\TestSignalRHistoryClient.csproj", "{69EBA6AF-403E-4109-9D53-6B061C8732BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,18 @@ Global
 		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x64.Build.0 = Release|Any CPU
 		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x86.ActiveCfg = Release|Any CPU
 		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x86.Build.0 = Release|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Debug|x64.Build.0 = Debug|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Debug|x86.Build.0 = Debug|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Release|x64.ActiveCfg = Release|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Release|x64.Build.0 = Release|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

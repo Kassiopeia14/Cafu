@@ -17,7 +17,7 @@ public class ChatMessage
     public required string Receiver { get; set; }
 
     [Column("text")]
-    public string? Text { get; set; }
+    public required string Text { get; set; }
 
     [Column("init_time")]
     public DateTime TimeStamp { get; set; }

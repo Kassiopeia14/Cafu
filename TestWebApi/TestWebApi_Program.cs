@@ -32,6 +32,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapHub<ChatHub>("/chatHub");
+app.MapHub<MessageHistoryHub>("/messageHistoryHub");
 
 app.MapControllers();
 

@@ -1,16 +1,21 @@
 using Microsoft.AspNetCore.Mvc;
 using modTestWebApiJSONModels;
 using modTestChatRepository;
+using Microsoft.AspNetCore.SignalR;
 
 [ApiController]
 [Route("api/[controller]")]
 public class MessageController : ControllerBase
 {
     ITestChatRepository chatRepository;
+    IHubContext<MessageHistoryHub> messageHistoryHubContext;
 
-    public MessageController(ITestChatRepository chatRepository)
+    public MessageController(
+        ITestChatRepository chatRepository,
+        IHubContext<MessageHistoryHub> messageHistoryHubContext)
     {
         this.chatRepository = chatRepository;
+        this.messageHistoryHubContext = messageHistoryHubContext;
     }       
 
     [HttpPost]
@@ -20,7 +25,9 @@ public class MessageController : ControllerBase
         [FromBody] MessageItem message)
     {
         chatRepository.SaveMessage(sender, receiver, message);
+        
+        messageHistoryHubContext.Clients.All.SendAsync("SendMessage", sender, receiver, message);
 
-        Console.WriteLine($"Received POST: {message.Text} from {sender} to {receiver}");
+        //Console.WriteLine($"Received POST: {message.Text} from {sender} to {receiver}");
     }
 }

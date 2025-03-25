@@ -2,14 +2,14 @@ using Microsoft.AspNetCore.SignalR;
 using modTestChatRepository;
 using modTestWebApiJSONModels;
 
-public class ChatHub : Hub
+public class MessageHistoryHub : Hub
 {
     ITestChatRepository chatRepository;
 
-    public ChatHub(ITestChatRepository chatRepository)
+    public MessageHistoryHub(ITestChatRepository chatRepository)
     {
         this.chatRepository = chatRepository;
-    }       
+    }
 
     public async Task SendMessage(
         string sender, 
@@ -24,5 +24,12 @@ public class ChatHub : Hub
         await Clients
             .AllExcept(Context.ConnectionId)
             .SendAsync("ReceiveMessage", sender, message);
+    }
+
+    public async Task GetMessages(string sender, string receiver)
+    {
+        List<HistoryItem> messageHistory = chatRepository.GetHistory(sender, receiver);
+
+        await Clients.Caller.SendAsync("ReceiveHistory", messageHistory);
     }
 }
