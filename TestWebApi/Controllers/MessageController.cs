@@ -27,7 +27,5 @@ public class MessageController : ControllerBase
         chatRepository.SaveMessage(sender, receiver, message);
         
         messageHistoryHubContext.Clients.All.SendAsync("SendMessage", sender, receiver, message);
-
-        //Console.WriteLine($"Received POST: {message.Text} from {sender} to {receiver}");
     }
 }

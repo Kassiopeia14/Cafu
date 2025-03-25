@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
-using modTestWebApiJSONModels;
 
 Console.WriteLine("Hello from TestSignalRHistoryClient!");
 
 var connection = new HubConnectionBuilder()
     .WithUrl("http://localhost:5005/messageHistoryHub")
+    .WithAutomaticReconnect()
     .Build();
 
 connection.On<List<HistoryItem>>("ReceiveHistory", (messageHistory) =>

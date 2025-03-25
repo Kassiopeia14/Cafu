@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestExe", "TestExe\TestExe.csproj", "{0BA9223F-AB8E-4000-A05B-492175834FB5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modTestHTTPClient", "modTestHTTPClient\modTestHTTPClient.csproj", "{35A0FE2F-5D73-45A2-AF50-5B3818B01E62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebApi", "TestWebApi\TestWebApi.csproj", "{C7933B4B-D3F7-48CD-B7ED-BC6B78022E47}"
@@ -14,8 +12,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modTestChatRepository", "modTestChatRepository\modTestChatRepository.csproj", "{81245932-8B41-439A-A9D3-C96402EB4D12}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "modTestChatDataStorage", "modTestChatDataStorage\modTestChatDataStorage.csproj", "{293A2A56-259B-446B-9152-C7BCFDA1C3E7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRClient", "TestSignalRClient\TestSignalRClient.csproj", "{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSignalRHistoryClient", "TestSignalRHistoryClient\TestSignalRHistoryClient.csproj", "{69EBA6AF-403E-4109-9D53-6B061C8732BF}"
 EndProject
@@ -29,18 +25,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Debug|x64.Build.0 = Debug|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Debug|x86.Build.0 = Debug|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Release|x64.ActiveCfg = Release|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Release|x64.Build.0 = Release|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Release|x86.ActiveCfg = Release|Any CPU
-		{0BA9223F-AB8E-4000-A05B-492175834FB5}.Release|x86.Build.0 = Release|Any CPU
 		{35A0FE2F-5D73-45A2-AF50-5B3818B01E62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35A0FE2F-5D73-45A2-AF50-5B3818B01E62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35A0FE2F-5D73-45A2-AF50-5B3818B01E62}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -101,18 +85,6 @@ Global
 		{293A2A56-259B-446B-9152-C7BCFDA1C3E7}.Release|x64.Build.0 = Release|Any CPU
 		{293A2A56-259B-446B-9152-C7BCFDA1C3E7}.Release|x86.ActiveCfg = Release|Any CPU
 		{293A2A56-259B-446B-9152-C7BCFDA1C3E7}.Release|x86.Build.0 = Release|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|x64.Build.0 = Debug|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Debug|x86.Build.0 = Debug|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x64.ActiveCfg = Release|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x64.Build.0 = Release|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x86.ActiveCfg = Release|Any CPU
-		{DF9184E1-FA3C-4393-908C-75FE5EB8BD63}.Release|x86.Build.0 = Release|Any CPU
 		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69EBA6AF-403E-4109-9D53-6B061C8732BF}.Debug|x64.ActiveCfg = Debug|Any CPU

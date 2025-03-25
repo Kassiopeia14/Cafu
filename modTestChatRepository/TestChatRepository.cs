@@ -1,5 +1,4 @@
-﻿using System.Runtime.InteropServices;
-using modTestChatDataStorage;
+﻿using modTestChatDataStorage;
 using modTestWebApiJSONModels;
 
 namespace modTestChatRepository;
@@ -37,12 +36,8 @@ public class TestChatRepository : ITestChatRepository
         string receiver,
         MessageItem message)
     {
-        Random random = new Random();
-        int randomId = random.Next(1, 1000);
-
         chatDataContext.ChatMessages.Add(new ChatMessage
         {
-            Id = randomId,
             Sender = sender,
             Receiver = receiver,
             Text = message.Text,

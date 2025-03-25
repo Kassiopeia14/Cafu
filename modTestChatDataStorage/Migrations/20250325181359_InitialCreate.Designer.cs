@@ -12,7 +12,7 @@ using modTestChatDataStorage;
 namespace modTestChatDataStorage.Migrations
 {
     [DbContext(typeof(ChatDataContext))]
-    [Migration("20250324213628_InitialCreate")]
+    [Migration("20250325181359_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -45,6 +45,7 @@ namespace modTestChatDataStorage.Migrations
                         .HasColumnName("sender");
 
                     b.Property<string>("Text")
+                        .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("text");
 

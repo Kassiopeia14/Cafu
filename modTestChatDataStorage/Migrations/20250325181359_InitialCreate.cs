@@ -20,7 +20,7 @@ namespace modTestChatDataStorage.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     sender = table.Column<string>(type: "text", nullable: false),
                     receiver = table.Column<string>(type: "text", nullable: false),
-                    text = table.Column<string>(type: "text", nullable: true),
+                    text = table.Column<string>(type: "text", nullable: false),
                     init_time = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
