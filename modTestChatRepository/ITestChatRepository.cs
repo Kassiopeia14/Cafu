@@ -4,11 +4,14 @@ using modTestWebApiJSONModels;
 
 public interface ITestChatRepository
 {
-    List<HistoryItem> GetHistory(string sender, string receiver);
+    int getUserId(string username);
+    int getChatId(string sender, string receiver);
+
+    List<HistoryItem> GetHistory(int chatId);
     
     void SaveMessage(
-        string sender,
-        string receiver,
+        int chatId,
+        int senderId,
         MessageItem message);
 
 }

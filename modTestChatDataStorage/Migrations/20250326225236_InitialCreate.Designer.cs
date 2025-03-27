@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using modTestChatDataStorage;
@@ -11,9 +12,11 @@ using modTestChatDataStorage;
 namespace modTestChatDataStorage.Migrations
 {
     [DbContext(typeof(ChatDataContext))]
-    partial class ChatDataContextModelSnapshot : ModelSnapshot
+    [Migration("20250326225236_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,6 +87,10 @@ namespace modTestChatDataStorage.Migrations
                     b.Property<int>("ChatId")
                         .HasColumnType("integer")
                         .HasColumnName("chat_id");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
 
                     b.HasKey("UserId", "ChatId");
 

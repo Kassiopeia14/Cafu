@@ -4,17 +4,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace modTestChatDataStorage;
 
 [Table("messages")]
-public class ChatMessage
+public class ChatMessageData
 {
     [Key]
     [Column("id")]
     public int Id { get; set; }
     
-    [Column("sender")]
-    public required string Sender { get; set; }
+    [Column("sender_id")]
+    public int SenderId { get; set; }
+    public UserData Sender { get; set; }
     
-    [Column("receiver")]
-    public required string Receiver { get; set; }
+    [Column("chat_id")]
+    public int ChatId { get; set; }
+    public ChatData Chat { get; set; }
 
     [Column("text")]
     public required string Text { get; set; }

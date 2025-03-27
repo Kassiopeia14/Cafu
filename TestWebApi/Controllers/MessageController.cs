@@ -24,7 +24,10 @@ public class MessageController : ControllerBase
         [FromHeader(Name = "receiver")] string receiver,
         [FromBody] MessageItem message)
     {
-        chatRepository.SaveMessage(sender, receiver, message);
+        int chatId = chatRepository.getChatId(sender, receiver);
+        int senderId = chatRepository.getUserId(sender);        
+
+        chatRepository.SaveMessage(chatId, senderId, message);
         
         messageHistoryHubContext.Clients.All.SendAsync("SendMessage", sender, receiver, message);
     }
