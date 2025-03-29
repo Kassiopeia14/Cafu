@@ -1,0 +1,47 @@
+﻿using Microsoft.AspNetCore.SignalR;
+using modChatRepository;
+using modMnemosyneJSONModels;
+using modMnemosyneSignalRModels;
+
+namespace modMnemosyneHub;
+
+public class MnemosyneHub  : Hub
+{
+    IChatRepository chatRepository;
+
+    public MnemosyneHub(IChatRepository chatRepository)
+    {
+        this.chatRepository = chatRepository;
+    }
+    
+        public async Task SendMessage(
+        string sender, 
+        string receiver, 
+        string message)
+    {
+        int senderId = chatRepository.getUserId(sender);
+        int chatId = chatRepository.getChatId(sender, receiver);
+
+        chatRepository.SaveMessage(
+            chatId, 
+            senderId, 
+            new MessageItem { Text = message });
+
+        await Clients.Group($"chat-{chatId}").SendAsync("ReceiveMessage", sender, message);
+    }
+
+    public async Task GetMessages(string sender, string receiver)
+    {
+        await Clients.Caller.SendAsync("ReceiveMessage", "Server", "Connected");
+
+        int chatId = chatRepository.getChatId(sender, receiver);
+        List<HistoryItem> messageHistory = chatRepository.GetHistory(chatId);
+
+        await Clients.Caller.SendAsync("ReceiveHistory", messageHistory);
+
+        string groupName = $"chat-{chatId}";
+        await Groups.AddToGroupAsync(Context.ConnectionId, groupName);
+
+        await Clients.Group(groupName).SendAsync("ChatNotification", $"{sender} is online!");
+    }
+}
